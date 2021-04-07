@@ -27,6 +27,7 @@ const handleTabChange = (tab) => {
 
 const displaySearchResults = (tabResults) => {
     const searchResultsContainer = document.querySelector('#messy-search-results-container')
+    if (!searchResultsContainer) return
     searchResultsContainer.innerHTML = "";
     tabResults.forEach((tab, i) => {
         const tabDiv = document.createElement('div')
