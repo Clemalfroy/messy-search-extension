@@ -1,0 +1,52 @@
+{
+    "name": "Messy search",
+    "description": "This extension allows you to search content in the mess that is your tabs to easily find the information you are looking for",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "/images/icons/16.png",
+            "32": "/images/icons/32.png",
+            "48": "/images/icons/48.png",
+            "128": "/images/icons/128.png"
+          }
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs",
+        "unlimitedStorage",
+        "sessions",
+        "commands"
+    ],
+    "icons": {
+        "16": "/images/icons/16.png",
+        "32": "/images/icons/32.png",
+        "48": "/images/icons/48.png",
+        "128": "/images/icons/128.png"
+    },
+    "content_scripts" : [
+        {
+            "matches" : [ "http://*/*", "https://*/*" ],
+            "js": ["content-script.js"],
+            "css": ["style.css"]
+        }
+    ],
+    "commands": {
+        "search": {
+          "suggested_key": {
+            "default": "Ctrl+J",
+            "mac": "Command+J"
+          },
+          "description": "Toggle search feature"
+        }
+    }
+}
