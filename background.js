@@ -128,6 +128,7 @@ chrome.tabs.onRemoved.addListener(async (tabId) => {
 })
 
 chrome.commands.onCommand.addListener((command) => {
+    console.log("Command", command);
     if (Object.keys(commandDispatcher).includes(command)) {
         commandDispatcher[command]()
     }
