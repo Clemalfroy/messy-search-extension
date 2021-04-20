@@ -8,7 +8,7 @@ const getAllTabsFromLocalStorage = async () => {
 }
 
 const queryHasMatched = (tab, query) => {
-    return (tab.tabText && tab.tabText.includes(query)) || tab.title.toLowerCase().includes(query)
+    return (tab.tabText && tab.tabText.includes(query)) || tab.title.toLowerCase().includes(query) 
 }
 
 const search = async (query) => {
